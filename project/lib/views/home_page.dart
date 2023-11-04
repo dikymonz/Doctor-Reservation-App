@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                         child: Hero(
                           tag: 'reservasiHero',
                           child: CategoryCard(
-                            categoryName: 'Reservation',
+                            categoryName: 'Reservations',
                             iconImagePath: "assets/images/Reservationdata.png",
                           ),
                         ),
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                         child: Hero(
                           tag: 'jadwalHero',
                           child: CategoryCard(
-                            categoryName: 'Schedule',
+                            categoryName: 'Schedule      ',
                             iconImagePath: "assets/images/Schedule.png",
                           ),
                         ),

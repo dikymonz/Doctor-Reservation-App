@@ -88,7 +88,7 @@ class _ChatAiState extends State<ChatAi> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -141,7 +141,7 @@ class _ChatAiState extends State<ChatAi> {
               SizedBox(height: 30),
               // Docs Profile
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
