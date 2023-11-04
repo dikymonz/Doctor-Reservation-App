@@ -15,9 +15,15 @@ class ChatAi extends StatefulWidget {
 
 class _ChatAiState extends State<ChatAi> {
   var jawaban = "";
+  bool isLoading = false; // Add a boolean variable to track loading state
   TextEditingController pertanyaanController = TextEditingController();
 
   void _askGPT() async {
+    setState(() {
+      jawaban = ""; // Clear previous answer
+      isLoading = true; // Set loading state to true when making the API call
+    });
+
     String apiKey = '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';
     Dio dio = Dio(BaseOptions(
       baseUrl: 'https://api.openai.com/v1',
@@ -63,7 +69,13 @@ class _ChatAiState extends State<ChatAi> {
       }
     } on Exception catch (e) {
       print(e);
+    } finally {
+      setState(() {
+        isLoading =
+            false; // Set loading state to false regardless of success or failure
+      });
     }
+
     print("submit");
   }
 
@@ -235,6 +247,16 @@ class _ChatAiState extends State<ChatAi> {
                       child: Text(
                         "Submit",
                         style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    // Loading indicator
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Visibility(
+                        visible: isLoading,
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
                       ),
                     ),
                   ],
